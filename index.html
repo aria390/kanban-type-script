@@ -14,14 +14,20 @@
       >
         header
       </header>
-      <aside class="bg-white col-start-1 col-end-1 row-start-1 row-end-12">
+      <aside
+        class="bg-white col-start-1 col-end-1 row-start-1 row-end-12 h-screen"
+      >
         <div class="bg-white border-b-2 border-[#e5e7eb] px-8 py-13">
           <img class="w-[60%]" src="./src/image/logolight.svg" alt="" />
         </div>
-        <div class="flex flex-col gap-20">
-          <div class="flex flex-col gap-5">
-            <span>ALL BOARDS (3)</span>
-            <div>
+        <div
+          class="flex flex-col gap-20 justify-between pb-10 border-r-2 border-r-[#e5e7eb] h-full"
+        >
+          <div class="flex flex-col gap-3">
+            <span class="text-[#9ca3af] font-semibold">ALL BOARDS (3)</span>
+            <button
+              class="flex text-gray-500 gap-6 font-semibold font-sans w-sm hover:text-white hover:bg-[#635fc7] hover:opacity-50 text-xl tracking-wide items-center pl-6 rounded-r-full h-15 hover:transition ease-out focus:bg-[#635fc7] focus:text-white cursor-pointer"
+            >
               <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M0 2.889A2.889 2.889 0 0 1 2.889 0H13.11A2.889 2.889 0 0 1 16 2.889V13.11A2.888 2.888 0 0 1 13.111 16H2.89A2.889 2.889 0 0 1 0 13.111V2.89Zm1.333 5.555v4.667c0 .859.697 1.556 1.556 1.556h6.889V8.444H1.333Zm8.445-1.333V1.333h-6.89A1.556 1.556 0 0 0 1.334 2.89V7.11h8.445Zm4.889-1.333H11.11v4.444h3.556V5.778Zm0 5.778H11.11v3.11h2a1.556 1.556 0 0 0 1.556-1.555v-1.555Zm0-7.112V2.89a1.555 1.555 0 0 0-1.556-1.556h-2v3.111h3.556Z"
@@ -29,8 +35,10 @@
                 ></path>
               </svg>
               <span>Platform Launch</span>
-            </div>
-            <div>
+            </button>
+            <button
+              class="flex text-gray-500 gap-6 font-semibold font-sans w-sm hover:text-white hover:bg-[#635fc7] hover:opacity-50 text-xl tracking-wide items-center pl-6 rounded-r-full h-15 hover:transition ease-out focus:bg-[#635fc7] focus:text-white cursor-pointer"
+            >
               <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M0 2.889A2.889 2.889 0 0 1 2.889 0H13.11A2.889 2.889 0 0 1 16 2.889V13.11A2.888 2.888 0 0 1 13.111 16H2.89A2.889 2.889 0 0 1 0 13.111V2.89Zm1.333 5.555v4.667c0 .859.697 1.556 1.556 1.556h6.889V8.444H1.333Zm8.445-1.333V1.333h-6.89A1.556 1.556 0 0 0 1.334 2.89V7.11h8.445Zm4.889-1.333H11.11v4.444h3.556V5.778Zm0 5.778H11.11v3.11h2a1.556 1.556 0 0 0 1.556-1.555v-1.555Zm0-7.112V2.89a1.555 1.555 0 0 0-1.556-1.556h-2v3.111h3.556Z"
@@ -38,8 +46,10 @@
                 ></path>
               </svg>
               <span>Marketing Plan</span>
-            </div>
-            <div>
+            </button>
+            <button
+              class="flex text-gray-500 gap-6 font-semibold font-sans w-sm hover:text-white hover:bg-[#635fc7] hover:opacity-50 text-xl tracking-wide items-center pl-6 rounded-r-full h-15 hover:transition ease-out focus:bg-[#635fc7] focus:text-white cursor-pointer"
+            >
               <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M0 2.889A2.889 2.889 0 0 1 2.889 0H13.11A2.889 2.889 0 0 1 16 2.889V13.11A2.888 2.888 0 0 1 13.111 16H2.89A2.889 2.889 0 0 1 0 13.111V2.89Zm1.333 5.555v4.667c0 .859.697 1.556 1.556 1.556h6.889V8.444H1.333Zm8.445-1.333V1.333h-6.89A1.556 1.556 0 0 0 1.334 2.89V7.11h8.445Zm4.889-1.333H11.11v4.444h3.556V5.778Zm0 5.778H11.11v3.11h2a1.556 1.556 0 0 0 1.556-1.555v-1.555Zm0-7.112V2.89a1.555 1.555 0 0 0-1.556-1.556h-2v3.111h3.556Z"
@@ -47,21 +57,26 @@
                 ></path>
               </svg>
               <span>Roadmap</span>
-            </div>
-            <div>
+            </button>
+            <button
+              class="flex text-[#635fc7] gap-6 font-semibold font-sans w-sm  text-xl tracking-wide items-center pl-6 rounded-r-full h-15 cursor-pointer"
+            >
               <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M0 2.889A2.889 2.889 0 0 1 2.889 0H13.11A2.889 2.889 0 0 1 16 2.889V13.11A2.888 2.888 0 0 1 13.111 16H2.89A2.889 2.889 0 0 1 0 13.111V2.89Zm1.333 5.555v4.667c0 .859.697 1.556 1.556 1.556h6.889V8.444H1.333Zm8.445-1.333V1.333h-6.89A1.556 1.556 0 0 0 1.334 2.89V7.11h8.445Zm4.889-1.333H11.11v4.444h3.556V5.778Zm0 5.778H11.11v3.11h2a1.556 1.556 0 0 0 1.556-1.555v-1.555Zm0-7.112V2.89a1.555 1.555 0 0 0-1.556-1.556h-2v3.111h3.556Z"
                   fill="currentcolor"
                 ></path>
               </svg>
-              <span>+ Create New Board</span>
+              <span>Marketing Plan</span>
+            </button>
             </div>
-          </div>
+            
           <div>sss</div>
         </div>
       </aside>
-      <main class="bg-[green] col-start-2 col-end-3 row-start-2 row-end-3">
+      <main
+        class="bg-[green] col-start-2 col-end-3 row-start-2 row-end-3 h-screen"
+      >
         main
       </main>
     </section>
