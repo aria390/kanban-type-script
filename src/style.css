@@ -5,19 +5,23 @@
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
-.checkbox-style{
+.checkbox-style {
   position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
-.checkbox-anime{
-  transition-timing-function: 
-cubic-bezier(.4, 0, .2, 1);
-    transition-duration: .15s;
+.checkbox-anime {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
 }
+.hidden-bg {
+  display: none;
+}
+
+
