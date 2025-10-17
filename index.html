@@ -109,7 +109,7 @@
                   ></div>
                   <div
                     id="circle"
-                    class="bg-white absolute h-6 w-6 rounded-full checkbox-anime top-1 left-9"
+                    class="bg-white absolute h-6 w-6 rounded-full checkbox-anime top-1 left-[10px]"
                   ></div>
                 </div>
               </label>
@@ -232,32 +232,7 @@
         </button>
       </div>
     </div>
-    <div
-      class="z-20 bg-white fixed top-1/2 left-1/2 w-5/12 h-fit flex flex-col gap-4 p-8 translate-[-50%] rounded-xl hidden-bg"
-    >
-      <div class="flex flex-col gap-5">
-        <div class="flex items-center justify-between">
-          <span class="text-xl font-semibold">title</span>
-          <div class="p-2 flex flex-col gap-1 cursor-pointer">
-            <div class="size-1 bg-[#64748b] rounded-full"></div>
-            <div class="size-1 bg-[#64748b] rounded-full"></div>
-            <div class="size-1 bg-[#64748b] rounded-full"></div>
-          </div>
-        </div>
-        <div class="flex flex-col gap-4">
-          <span class="text-gray-500">current status</span>
-          <select
-            class="border-1 border-[#828fa3] rounded-xl h-[40px]"
-            id="selectStatus"
-          >
-            <option value></option>
-            <option value="TODO">TODO</option>
-            <option value="DOING">DOING</option>
-            <option value="DONE">DONE</option>
-          </select>
-        </div>
-      </div>
-    </div>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

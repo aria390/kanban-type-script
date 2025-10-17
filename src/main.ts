@@ -1,3 +1,4 @@
+import type { AnymatchFn } from "vite";
 import "./style.css";
 
 const newTaskAddEl = document.getElementById("newTaskAdd") as HTMLButtonElement;
@@ -21,10 +22,76 @@ const circleEL = document.getElementById("circle") as HTMLDivElement;
 const todoCountEl = document.getElementById("todoCount") as HTMLSpanElement;
 const doingCountEl = document.getElementById("doingCount") as HTMLSpanElement;
 const doneCountEL = document.getElementById("doneCount") as HTMLSpanElement;
+const todoArray: {
+  titleInput: string;
+  DescriptionInput: string;
+  status: string;
+}[][] = [];
 
 let countOne = 1;
 let countTwo = 1;
 let countThree = 1;
+
+const json = localStorage.getItem("Todoist");
+const arr = json ? JSON.parse(json) : todoArray;
+
+console.log(arr);
+
+arr.forEach((innerArray: any[]) => {
+  innerArray.forEach((item) => {
+    if (item && typeof item === "object") {
+      const title = item.titleInput ?? "";
+      const description = item.DescriptionInput ?? "";
+      const status = item.status ?? "";
+
+      if (status == "TODO") {
+        TodoEl.innerHTML += `
+          <div class="flex flex-col w-90 gap-6 rounded pb-8 border-gray-400">
+            <div
+              class="h-33 w-full dark:bg-[#2b2c37] flex flex-col bg-white p-6 hover:opacity-20 cursor-pointer rounded-lg shadow-md text-left"
+            >
+              <span class="text-lg font-bold p-2 dark:text-white"
+                >${title}</span
+              >
+              <span class="text-[#9ca3af] p-2 text-xs font-bold"
+                >${description}</span
+              >
+            </div>
+          </div> `;
+      } else if (status == "DOING") {
+        DoingEl.innerHTML += `
+          <div class="flex flex-col w-90 gap-6 rounded pb-8 border-gray-400">
+            <div
+              class="h-33 w-full dark:bg-[#2b2c37] flex flex-col bg-white p-6 hover:opacity-20 cursor-pointer rounded-lg shadow-md text-left"
+            >
+              <span class="text-lg font-bold p-2 dark:text-white"
+                >${title}</span
+              >
+              <span class="text-[#9ca3af] p-2 text-xs font-bold"
+                >${description}</span
+              >
+            </div>
+          </div> `;
+      } else if (status == "DONE") {
+        DoneEl.innerHTML += `
+          <div class="flex flex-col w-90 gap-6 rounded pb-8 border-gray-400">
+            <div
+              class="h-33 w-full dark:bg-[#2b2c37] flex flex-col bg-white p-6 hover:opacity-20 cursor-pointer rounded-lg shadow-md text-left"
+            >
+              <span class="text-lg font-bold p-2 dark:text-white"
+                >${title}</span
+              >
+              <span class="text-[#9ca3af] p-2 text-xs font-bold"
+                >${description}</span
+              >
+            </div>
+          </div> `;
+      }
+    } else {
+      console.warn("Unexpected item in inner array:", item);
+    }
+  });
+});
 
 newTaskAddEl.addEventListener("click", () => {
   hiddenBgEl.classList.toggle("hidden-bg");
@@ -38,6 +105,17 @@ makeNewTaskBtnEl.addEventListener("click", () => {
   if (selectStatusInput === "TODO") {
     countOne++;
     todoCountEl.innerHTML = `TODO (${countOne})`;
+
+    todoArray.push([
+      {
+        titleInput: titleInput,
+        DescriptionInput: DescriptionInput,
+        status: "TODO",
+      },
+    ]);
+
+    localStorage.setItem("Todoist", JSON.stringify(todoArray));
+
     TodoEl.innerHTML += `
           <div class="flex flex-col w-90 gap-6 rounded pb-8 border-gray-400">
             <div
@@ -55,6 +133,17 @@ makeNewTaskBtnEl.addEventListener("click", () => {
   } else if (selectStatusInput === "DOING") {
     countTwo++;
     doingCountEl.innerHTML = `DOING(${countTwo})`;
+
+    todoArray.push([
+      {
+        titleInput: titleInput,
+        DescriptionInput: DescriptionInput,
+        status: "DOING",
+      },
+    ]);
+
+    localStorage.setItem("Todoist", JSON.stringify(todoArray));
+
     DoingEl.innerHTML += `
     <div class="flex flex-col w-90 gap-6 rounded pb-8 border-gray-400">
             <div
@@ -72,6 +161,15 @@ makeNewTaskBtnEl.addEventListener("click", () => {
   } else if (selectStatusInput === "DONE") {
     countThree++;
     doneCountEL.innerHTML = `DONE(${countThree})`;
+    todoArray.push([
+      {
+        titleInput: titleInput,
+        DescriptionInput: DescriptionInput,
+        status: "DONE",
+      },
+    ]);
+
+    localStorage.setItem("Todoist", JSON.stringify(todoArray));
     DoneEl.innerHTML += `
     <div class="flex flex-col w-90 gap-6 rounded pb-8 border-gray-400">
             <div
