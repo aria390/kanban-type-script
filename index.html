@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -10,9 +10,11 @@
   <body class="h-screen">
     <section class="relative grid grid-cols-[3fr_9fr] grid-rows-[2fr_10fr]">
       <header
-        class="bg-white p-9 flex items-center justify-between border-l-2 border-b-2 border-[#e5e7eb] col-start-2 col-end-3 row-start-1 row-end-2"
+        class="bg-white dark:bg-[#2b2c37] dark:border-gray-500 p-9 flex items-center justify-between border-l-2 border-b-2 border-[#e5e7eb] col-start-2 col-end-3 row-start-1 row-end-2"
       >
-        <span class="text-3xl font-semibold">Platform Launch</span>
+        <span class="dark:text-white text-3xl font-semibold"
+          >Platform Launch</span
+        >
         <div class="flex justify-center gap-8">
           <button
             id="newTaskAdd"
@@ -28,9 +30,11 @@
         </div>
       </header>
       <aside
-        class="bg-white col-start-1 col-end-1 row-start-1 row-end-12 h-[95%]"
+        class="bg-white dark:bg-[#2b2c37] col-start-1 col-end-1 row-start-1 row-end-12 h-[96%]"
       >
-        <div class="bg-white border-b-2 border-[#e5e7eb] h-[17.6%] px-8 py-13">
+        <div
+          class="bg-white dark:bg-[#2b2c37] dark:border-gray-500 border-b-2 border-[#e5e7eb] h-[17.4%] px-8 py-13"
+        >
           <img class="w-[60%]" src="./src/image/logolight.svg" alt="" />
         </div>
         <div class="flex flex-col gap-20 justify-between h-full">
@@ -80,13 +84,15 @@
                   fill="currentcolor"
                 ></path>
               </svg>
-              <span>Marketing Plan</span>
+              <span>+Creating New Board</span>
             </button>
           </div>
 
-          <div class="flex flex-col items-center justify-center p-8">
+          <div
+            class="flex flex-col items-center justify-center p-10 dark:bg-[#2b2c37]"
+          >
             <div
-              class="flex gap-6 justify-center items-center p-6 rounded-md w-[80%] h-14 bg-[#f4f7fd]"
+              class="flex gap-6 dark:bg-[#20212c] justify-center items-center p-6 rounded-md w-[80%] h-14 bg-[#f4f7fd]"
             >
               <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -98,9 +104,11 @@
                 <div class="relative">
                   <input class="checkbox-style" type="checkbox" />
                   <div
+                    id="changeColor"
                     class="block h-8 w-18 rounded-full border border-[#635fc7] bg-[#635fc7]"
                   ></div>
                   <div
+                    id="circle"
                     class="bg-white absolute h-6 w-6 rounded-full checkbox-anime top-1 left-9"
                   ></div>
                 </div>
@@ -116,18 +124,20 @@
         </div>
       </aside>
       <main
-        class="bg-[#f4f7fd] flex gap-30 col-start-2 border-l-2 border-[#e5e7eb] col-end-3 row-start-2 row-end-3 py-3 px-12 h-[115%] overflow-auto"
+        class="bg-[#f4f7fd] dark:bg-[#20212c] dark:border-gray-500 flex gap-30 col-start-2 border-l-2 border-[#e5e7eb] col-end-3 row-start-2 row-end-3 py-3 px-12 h-[115.3%] overflow-auto"
       >
         <div id="Todo" class="h-full flex-col gap-2">
           <div class="flex gap-4 items-center p-4">
             <div class="h-5 w-5 rounded-full bg-[#49c4e5]"></div>
-            <span class="text-[#9ca3af] text-[15px] font-bold">TODO (1)</span>
+            <span id="todoCount" class="text-[#9ca3af] text-[15px] font-bold"
+              >TODO (1)</span
+            >
           </div>
           <div class="flex flex-col w-90 gap-6 rounded pb-8 border-gray-400">
             <div
-              class="h-33 w-full flex flex-col bg-white p-6 hover:opacity-20 cursor-pointer rounded-lg shadow-md text-left"
+              class="h-33 w-full dark:bg-[#2b2c37] flex flex-col bg-white p-6 hover:opacity-20 cursor-pointer rounded-lg shadow-md text-left"
             >
-              <span class="text-lg font-bold p-2"
+              <span class="text-lg font-bold p-2 dark:text-white"
                 >Build UI for onboarding flow</span
               >
               <span class="text-[#9ca3af] p-2 text-xs font-bold"
@@ -139,13 +149,15 @@
         <div id="Doing" class="h-full flex-col gap-3">
           <div class="flex gap-4 items-center p-4">
             <div class="h-5 w-5 rounded-full bg-[#8471f2]"></div>
-            <span class="text-[#9ca3af] text-[15px] font-bold">Doing (1)</span>
+            <span id="doingCount" class="text-[#9ca3af] text-[15px] font-bold"
+              >Doing (1)</span
+            >
           </div>
           <div class="flex flex-col w-90 gap-6 rounded pb-8 border-gray-400">
             <div
-              class="h-33 w-full flex flex-col bg-white p-6 hover:opacity-20 cursor-pointer rounded-lg shadow-md text-left"
+              class="h-33 w-full dark:bg-[#2b2c37] flex flex-col bg-white p-6 hover:opacity-20 cursor-pointer rounded-lg shadow-md text-left"
             >
-              <span class="text-lg font-bold p-2"
+              <span class="text-lg font-bold p-2 dark:text-white"
                 >Design settings and search pages</span
               >
               <span class="text-[#9ca3af] p-2 text-xs font-bold"
@@ -157,13 +169,15 @@
         <div id="Done" class="h-full flex-col gap-3">
           <div class="flex gap-4 items-center p-4">
             <div class="h-5 w-5 rounded-full bg-[#67e2ae]"></div>
-            <span class="text-[#9ca3af] text-[15px] font-bold">Done (1)</span>
+            <span id="doneCount" class="text-[#9ca3af] text-[15px] font-bold"
+              >Done (1)</span
+            >
           </div>
           <div class="flex flex-col w-90 gap-6 rounded pb-8 border-gray-400">
             <div
-              class="h-33 w-full flex flex-col bg-white p-6 hover:opacity-20 cursor-pointer rounded-lg shadow-md text-left"
+              class="h-33 w-full dark:bg-[#2b2c37] flex flex-col bg-white p-6 hover:opacity-20 cursor-pointer rounded-lg shadow-md text-left"
             >
-              <span class="text-lg font-bold p-2"
+              <span class="text-lg font-bold p-2 dark:text-white"
                 >Conduct 5 wireframe tests</span
               >
               <span class="text-[#9ca3af] p-2 text-xs font-bold"
@@ -181,28 +195,28 @@
     ></div>
     <div
       id="modalNewTask"
-      class="z-20 bg-white fixed top-1/2 left-1/2 w-5/12 h-fit flex flex-col gap-4 p-8 translate-[-50%] rounded-xl hidden-bg"
+      class="z-20 bg-white dark:bg-[#2b2c37] fixed top-1/2 left-1/2 w-5/12 h-fit flex flex-col gap-4 p-8 translate-[-50%] rounded-xl hidden-bg"
     >
       <span class="text-black text-lg font-semibold">Add New Task</span>
       <div class="text-[#828fa3] flex flex-col gap-3">
         <label class="font-semibold" for="">Title</label>
         <input
           id="title"
-          class="border-2 border-[#d1d5db] font-[500] p-2 text-black rounded-sm"
+          class="border-2 dark:text-white dark:border-[#20212c] dark:bg-[#20212c] border-[#d1d5db] font-[500] p-2 text-black rounded-sm"
           type="text"
         />
       </div>
       <div class="text-[#828fa3] flex flex-col gap-3">
         <label class="font-semibold" for="">Description</label>
         <textarea
-          class="border-2 border-[#d1d5db] font-[500] p-2 text-black rounded-sm"
+          class="border-2 dark:text-white dark:border-[#20212c] dark:bg-[#20212c] border-[#d1d5db] font-[500] p-2 text-black rounded-sm"
           id="Description"
         ></textarea>
       </div>
       <div class="flex flex-col gap-5">
         <span class="text-[#828fa3]">status</span>
         <select
-          class="border-1 border-[#828fa3] rounded-xl h-[40px]"
+          class="border-1 dark:text-white dark:border-[#20212c] dark:bg-[#20212c] border-[#828fa3] rounded-xl h-[40px]"
           id="selectStatus"
         >
           <option value></option>
