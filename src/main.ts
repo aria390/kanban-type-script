@@ -76,3 +76,8 @@ makeNewTaskBtnEl.addEventListener("click", () => {
   hiddenBgEl.classList.add("hidden-bg");
   backdropEl.classList.add("hidden-bg");
 });
+
+backdropEl.addEventListener("click", () => {
+  hiddenBgEl.classList.toggle("hidden-bg");
+  backdropEl.classList.toggle("hidden-bg");
+});

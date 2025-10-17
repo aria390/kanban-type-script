@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="h-screen">
-    <section
-      class="relative grid grid-cols-[3fr_9fr] grid-rows-[2fr_10fr] h-full"
-    >
+    <section class="relative grid grid-cols-[3fr_9fr] grid-rows-[2fr_10fr]">
       <header
         class="bg-white p-9 flex items-center justify-between border-l-2 border-b-2 border-[#e5e7eb] col-start-2 col-end-3 row-start-1 row-end-2"
       >
@@ -30,14 +28,12 @@
         </div>
       </header>
       <aside
-        class="bg-white col-start-1 col-end-1 row-start-1 row-end-12 h-full"
+        class="bg-white col-start-1 col-end-1 row-start-1 row-end-12 h-[95%]"
       >
-        <div class="bg-white border-b-2 border-[#e5e7eb] px-8 py-13">
+        <div class="bg-white border-b-2 border-[#e5e7eb] h-[17.6%] px-8 py-13">
           <img class="w-[60%]" src="./src/image/logolight.svg" alt="" />
         </div>
-        <div
-          class="flex flex-col gap-20 justify-between border-r-2 border-r-[#e5e7eb] h-full"
-        >
+        <div class="flex flex-col gap-20 justify-between h-full">
           <div class="flex flex-col gap-3 pt-5">
             <span class="text-[#9ca3af] font-semibold pl-6"
               >ALL BOARDS (3)</span
@@ -120,9 +116,9 @@
         </div>
       </aside>
       <main
-        class="bg-[#f4f7fd] flex gap-30 col-start-2 col-end-3 row-start-2 row-end-3 py-3 px-12 h-[120%]"
+        class="bg-[#f4f7fd] flex gap-30 col-start-2 border-l-2 border-[#e5e7eb] col-end-3 row-start-2 row-end-3 py-3 px-12 h-[115%] overflow-auto"
       >
-        <div id="Todo" class="h-full flex-col gap-3">
+        <div id="Todo" class="h-full flex-col gap-2">
           <div class="flex gap-4 items-center p-4">
             <div class="h-5 w-5 rounded-full bg-[#49c4e5]"></div>
             <span class="text-[#9ca3af] text-[15px] font-bold">TODO (1)</span>
@@ -179,28 +175,73 @@
       </main>
     </section>
 
-    <div id="backdrop" class="fixed w-screen h-screen z-10 top-0 left-0 bg-[#0006] hidden-bg"></div>
-    <div id="modalNewTask"
+    <div
+      id="backdrop"
+      class="fixed w-screen h-screen z-10 top-0 left-0 bg-[#0006] hidden-bg"
+    ></div>
+    <div
+      id="modalNewTask"
       class="z-20 bg-white fixed top-1/2 left-1/2 w-5/12 h-fit flex flex-col gap-4 p-8 translate-[-50%] rounded-xl hidden-bg"
     >
       <span class="text-black text-lg font-semibold">Add New Task</span>
       <div class="text-[#828fa3] flex flex-col gap-3">
         <label class="font-semibold" for="">Title</label>
-        <input id="title" class="border-2 border-[#d1d5db] font-[500] p-2 text-black rounded-sm" type="text" />
+        <input
+          id="title"
+          class="border-2 border-[#d1d5db] font-[500] p-2 text-black rounded-sm"
+          type="text"
+        />
       </div>
       <div class="text-[#828fa3] flex flex-col gap-3">
         <label class="font-semibold" for="">Description</label>
-        <textarea  class="border-2 border-[#d1d5db] font-[500] p-2 text-black rounded-sm" id="Description"></textarea>
+        <textarea
+          class="border-2 border-[#d1d5db] font-[500] p-2 text-black rounded-sm"
+          id="Description"
+        ></textarea>
       </div>
       <div class="flex flex-col gap-5">
         <span class="text-[#828fa3]">status</span>
-        <select class="border-1 border-[#828fa3] rounded-xl h-[40px]" id="selectStatus">
+        <select
+          class="border-1 border-[#828fa3] rounded-xl h-[40px]"
+          id="selectStatus"
+        >
           <option value></option>
           <option value="TODO">TODO</option>
           <option value="DOING">DOING</option>
           <option value="DONE">DONE</option>
         </select>
-        <button id="makeNewTaskBtn" class="rounded-2xl cursor-pointer bg-[#635fc7] text-white h-12 font-semibold text-lg">Create Task</button>
+        <button
+          id="makeNewTaskBtn"
+          class="rounded-2xl cursor-pointer bg-[#635fc7] text-white h-12 font-semibold text-lg"
+        >
+          Create Task
+        </button>
+      </div>
+    </div>
+    <div
+      class="z-20 bg-white fixed top-1/2 left-1/2 w-5/12 h-fit flex flex-col gap-4 p-8 translate-[-50%] rounded-xl hidden-bg"
+    >
+      <div class="flex flex-col gap-5">
+        <div class="flex items-center justify-between">
+          <span class="text-xl font-semibold">title</span>
+          <div class="p-2 flex flex-col gap-1 cursor-pointer">
+            <div class="size-1 bg-[#64748b] rounded-full"></div>
+            <div class="size-1 bg-[#64748b] rounded-full"></div>
+            <div class="size-1 bg-[#64748b] rounded-full"></div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <span class="text-gray-500">current status</span>
+          <select
+            class="border-1 border-[#828fa3] rounded-xl h-[40px]"
+            id="selectStatus"
+          >
+            <option value></option>
+            <option value="TODO">TODO</option>
+            <option value="DOING">DOING</option>
+            <option value="DONE">DONE</option>
+          </select>
+        </div>
       </div>
     </div>
     <script type="module" src="/src/main.ts"></script>
